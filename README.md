@@ -245,18 +245,6 @@ The project uses a **modular object-oriented architecture**:
 - **Component Registration**: Dynamic component loading and initialization
 - **Event-Driven**: Uses DOM events for user interactions
 
-### Data Storage
-
-- **Local Storage**: Events are automatically saved to browser's local storage
-- **JSON Format**: Events are stored as JSON objects with date keys
-- **Automatic Persistence**: All changes are immediately saved
-
-### Performance Features
-
-- **Lazy Loading**: Calendar components are only initialized when needed
-- **Efficient Rendering**: Only re-renders necessary parts of the calendar
-- **Memory Management**: Event listeners are properly managed
-
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:

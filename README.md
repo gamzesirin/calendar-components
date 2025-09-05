@@ -27,7 +27,6 @@ A beautiful and comprehensive collection of interactive calendar components buil
     ├── 📄 ModernCalendar.js      # Modern calendar component
     ├── 📄 MinimalCalendar.js     # Minimal calendar component
     ├── 📄 DarkCalendar.js        # Dark theme calendar component
-    ├── 📄 ColorfulCalendar.js    # Colorful calendar component
     ├── 📄 CompactCalendar.js     # Compact calendar component
     ├── 📄 MultiSelectCalendar.js # Multi-select calendar component
     ├── 📄 DateRangeCalendar.js   # Date range picker component
@@ -239,12 +238,6 @@ To add new event categories, modify the `EventCalendar.js`:
 }
 ```
 
-## 📱 Browser Support
-
-- ✅ Chrome 60+
-- ✅ Firefox 55+
-- ✅ Safari 12+
-- ✅ Edge 79+
 
 ## 🔧 Technical Details
 
@@ -287,42 +280,4 @@ Contributions are welcome! Here's how you can help:
 - Test across different browsers
 - Update this README if needed
 
-## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙋‍♂️ Support
-
-If you have any questions or need help:
-
-1. Check the code comments for detailed explanations
-2. Look at existing calendar implementations for examples
-3. Open an issue if you find a bug
-
-## 🔮 Future Enhancements
-
-Potential features for future versions:
-
-- [ ] **Import/Export Events** - JSON, CSV, iCal formats
-- [ ] **Recurring Events** - Weekly, monthly, yearly repetition
-- [ ] **Event Reminders** - Browser notifications
-- [ ] **Multiple Calendars** - Separate calendar instances
-- [ ] **Themes** - Additional color themes and customization
-- [ ] **Localization** - Multiple language support
-- [ ] **Time Zones** - Multi-timezone support
-- [ ] **Accessibility** - Enhanced screen reader support
-- [ ] **Touch Gestures** - Swipe navigation for mobile
-- [ ] **Keyboard Shortcuts** - More keyboard navigation options
-
-## 📊 Stats
-
-- **10** Different calendar types
-- **11** Component files
-- **1500+** Lines of JavaScript
-- **1600+** Lines of CSS
-- **450+** Lines of HTML
-- **0** External dependencies
-
----
-
-Made with ❤️ by [Your Name] • [Current Year]

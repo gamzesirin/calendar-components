@@ -52,38 +52,33 @@ A beautiful and comprehensive collection of interactive calendar components buil
 - Easy on the eyes for night usage
 - High contrast for accessibility
 
-### 4. 🌈 Colorful Calendar
-- Vibrant colors and gradients
-- Eye-catching design
-- Great for creative applications
-
-### 5. 📦 Compact Calendar
+### 4. 📦 Compact Calendar
 - Space-saving design
 - Smaller size perfect for sidebars
 - Abbreviated month names
 
-### 6. ✅ Multi-Select Calendar
+### 5. ✅ Multi-Select Calendar
 - Select multiple dates simultaneously
 - Visual indication of selected dates
 - Clear all selection button
 - Perfect for booking systems
 
-### 7. 📊 Date Range Calendar
+### 6. 📊 Date Range Calendar
 - Select start and end dates
 - Visual range highlighting
 - Great for date filtering and reports
 
-### 8. 📋 Dropdown Calendar
+### 7. 📋 Dropdown Calendar
 - Month and year dropdown selectors
 - Quick navigation to any month/year
 - Keyboard accessible
 
-### 9. 📱 Inline Calendar
+### 8. 📱 Inline Calendar
 - Always visible calendar
 - Input field integration
 - Quick action buttons (Today, Tomorrow, Next Week)
 
-### 10. 📅 Event Calendar (Default)
+### 9. 📅 Event Calendar (Default)
 - Full event management system
 - Create, edit, and delete events
 - Event categories (Work, Personal, Holiday)

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Colorful Calendar Components</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Calendar Components</h1>
+				<p>A collection of beautiful and functional calendar components</p>
+			</header>
+
+			<nav class="nav-container">
+				<button class="nav-btn active" data-component="events">Events Calendar</button>
+				<button class="nav-btn" data-component="modern">Modern</button>
+				<button class="nav-btn" data-component="minimal">Minimal</button>
+				<button class="nav-btn" data-component="dark">Dark Mode</button>
+				<button class="nav-btn" data-component="compact">Compact</button>
+				<button class="nav-btn" data-component="multiselect">Multi-Select</button>
+				<button class="nav-btn" data-component="daterange">Date Range</button>
+				<button class="nav-btn" data-component="dropdown">Dropdown</button>
+				<button class="nav-btn" data-component="inline">Inline</button>
+				<button class="nav-btn" data-component="datepicker">DatePicker</button>
+			</nav>
+
+			<!-- Events Calendar Section -->
+			<section class="component-section active" id="events">
+				<div class="section-header">
+					<h2>Events Calendar</h2>
+					<p>Calendar with event indicators and hover details</p>
+				</div>
+				<div class="calendar-container">
+					<div class="event-controls">
+						<button id="add-event-btn" class="add-event-btn">Add Event</button>
+						<div id="event-info" class="event-info">
+							<span class="event-count">Click on a date to see events</span>
+						</div>
+					</div>
+					<div class="calendar events-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="events-prev">&larr;</button>
+							<div class="month-year">
+								<span id="events-month">January</span>
+								<span id="events-year">2024</span>
+							</div>
+							<button class="nav-btn" id="events-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="events-days"></div>
+					</div>
+				</div>
+
+				<!-- Event Form Modal -->
+				<div id="event-form-container" class="event-form-container">
+					<div class="event-form-modal">
+						<div class="event-form-header">
+							<h3 id="form-title">Add New Event</h3>
+							<button id="close-form" class="close-btn">&times;</button>
+						</div>
+						<form id="event-form" class="event-form">
+							<div class="form-field">
+								<label for="event-title">Event Title</label>
+								<input type="text" id="event-title" name="title" required />
+							</div>
+							<div class="form-field">
+								<label for="event-date">Date</label>
+								<input type="date" id="event-date" name="date" required />
+							</div>
+							<div class="form-field">
+								<label for="event-type">Type</label>
+								<select id="event-type" name="type" required>
+									<option value="work">Work</option>
+									<option value="personal">Personal</option>
+									<option value="holiday">Holiday</option>
+								</select>
+							</div>
+							<div class="form-field">
+								<label for="event-description">Description</label>
+								<textarea id="event-description" name="description" rows="3"></textarea>
+							</div>
+							<div class="form-actions">
+								<button type="submit" class="save-event-btn">Save Event</button>
+								<button type="button" id="cancel-event" class="cancel-event-btn">Cancel</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<!-- Event Modal -->
+				<div id="event-modal-container" class="event-modal-container">
+					<div class="event-modal">
+						<div class="event-modal-header">
+							<h3 id="modal-title">Events</h3>
+							<button id="close-modal" class="close-btn">&times;</button>
+						</div>
+						<div class="event-modal-content">
+							<div id="event-list-view" class="event-list-view">
+								<div class="event-list-actions">
+									<button id="add-event-modal-btn" class="add-event-btn">Add Event</button>
+								</div>
+								<div id="event-list" class="event-list">
+									<!-- Events will be populated here -->
+								</div>
+							</div>
+							<div id="event-form-view" class="event-form-view">
+								<div class="form-actions">
+									<button id="back-to-list" class="back-btn">← Back to List</button>
+								</div>
+								<form id="modal-event-form" class="event-form">
+									<div class="form-field">
+										<label for="modal-event-title">Event Title</label>
+										<input type="text" id="modal-event-title" name="title" required />
+									</div>
+									<div class="form-field">
+										<label for="modal-event-date">Date</label>
+										<input type="date" id="modal-event-date" name="date" required />
+									</div>
+									<div class="form-field">
+										<label for="modal-event-type">Type</label>
+										<select id="modal-event-type" name="type" required>
+											<option value="work">Work</option>
+											<option value="personal">Personal</option>
+											<option value="holiday">Holiday</option>
+										</select>
+									</div>
+									<div class="form-field">
+										<label for="modal-event-description">Description</label>
+										<textarea id="modal-event-description" name="description" rows="3"></textarea>
+									</div>
+									<div class="form-actions">
+										<button type="submit" class="save-event-btn">Save Event</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Modern Calendar Section -->
+			<section class="component-section" id="modern">
+				<div class="section-header">
+					<h2>Modern Calendar</h2>
+					<p>Clean and contemporary design with smooth animations</p>
+				</div>
+				<div class="calendar-container">
+					<div class="calendar modern-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="modern-prev">&larr;</button>
+							<div class="month-year">
+								<span id="modern-month">January</span>
+								<span id="modern-year">2024</span>
+							</div>
+							<button class="nav-btn" id="modern-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="modern-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Minimal Calendar Section -->
+			<section class="component-section" id="minimal">
+				<div class="section-header">
+					<h2>Minimal Calendar</h2>
+					<p>Simple and focused design for clean interfaces</p>
+				</div>
+				<div class="calendar-container">
+					<div class="calendar minimal-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="minimal-prev">&larr;</button>
+							<div class="month-year">
+								<span id="minimal-month">January</span>
+								<span id="minimal-year">2024</span>
+							</div>
+							<button class="nav-btn" id="minimal-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="minimal-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Dark Mode Calendar Section -->
+			<section class="component-section" id="dark">
+				<div class="section-header">
+					<h2>Dark Mode Calendar</h2>
+					<p>Perfect for dark themes and night-time usage</p>
+				</div>
+				<div class="calendar-container">
+					<div class="calendar dark-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="dark-prev">&larr;</button>
+							<div class="month-year">
+								<span id="dark-month">January</span>
+								<span id="dark-year">2024</span>
+							</div>
+							<button class="nav-btn" id="dark-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="dark-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Compact Calendar Section -->
+			<section class="component-section" id="compact">
+				<div class="section-header">
+					<h2>Compact Calendar</h2>
+					<p>Space-efficient design for tight layouts</p>
+				</div>
+				<div class="calendar-container">
+					<div class="calendar compact-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="compact-prev">&larr;</button>
+							<div class="month-year">
+								<span id="compact-month">January</span>
+								<span id="compact-year">2024</span>
+							</div>
+							<button class="nav-btn" id="compact-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="compact-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Multi-Select Calendar Section -->
+			<section class="component-section" id="multiselect">
+				<div class="section-header">
+					<h2>Multi-Select Calendar</h2>
+					<p>Select multiple dates with visual feedback</p>
+				</div>
+				<div class="calendar-container">
+					<div class="selected-info-display" id="multiselect-selected">
+						<div class="selected-info-content">
+							<span class="selected-label">Selected Dates</span>
+							<div class="selected-list selected-dates-list">No dates selected</div>
+						</div>
+						<button class="clear-selection-btn" id="clear-multiselect"></button>
+					</div>
+					<div class="calendar multiselect-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="multiselect-prev">&larr;</button>
+							<div class="month-year">
+								<span id="multiselect-month">January</span>
+								<span id="multiselect-year">2024</span>
+							</div>
+							<button class="nav-btn" id="multiselect-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="multiselect-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Date Range Calendar Section -->
+			<section class="component-section" id="daterange">
+				<div class="section-header">
+					<h2>Date Range Calendar</h2>
+					<p>Select date ranges with start and end dates</p>
+				</div>
+				<div class="calendar-container">
+					<div class="selected-info-display" id="daterange-selected">
+						<div class="selected-info-content">
+							<span class="selected-label">Selected Range</span>
+							<div class="selected-list selected-range-info">No range selected</div>
+						</div>
+						<button class="clear-range-btn" id="clear-daterange"></button>
+					</div>
+					<div class="calendar daterange-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="daterange-prev">&larr;</button>
+							<div class="month-year">
+								<span id="daterange-month">January</span>
+								<span id="daterange-year">2024</span>
+							</div>
+							<button class="nav-btn" id="daterange-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="daterange-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Dropdown Calendar Section -->
+			<section class="component-section" id="dropdown">
+				<div class="section-header">
+					<h2>Dropdown Calendar</h2>
+					<p>Calendar that appears as a dropdown overlay</p>
+				</div>
+				<div class="calendar-container">
+					<div class="dropdown-trigger">
+						<input type="text" id="dropdown-input" readonly />
+						<button id="dropdown-toggle">▼</button>
+					</div>
+					<div class="calendar dropdown-calendar">
+						<div class="calendar-header">
+							<button class="nav-btn" id="dropdown-prev">&larr;</button>
+							<div class="month-year dropdown-selectors">
+								<select id="month-dropdown" class="month-dropdown">
+									<option value="0">January</option>
+									<option value="1">February</option>
+									<option value="2">March</option>
+									<option value="3">April</option>
+									<option value="4">May</option>
+									<option value="5">June</option>
+									<option value="6">July</option>
+									<option value="7">August</option>
+									<option value="8">September</option>
+									<option value="9">October</option>
+									<option value="10">November</option>
+									<option value="11">December</option>
+								</select>
+								<select id="year-dropdown" class="year-dropdown">
+									<!-- Years will be populated by JavaScript -->
+								</select>
+							</div>
+							<button class="nav-btn" id="dropdown-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="dropdown-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Inline Calendar Section -->
+			<section class="component-section" id="inline">
+				<div class="section-header">
+					<h2>Inline Calendar</h2>
+					<p>Calendar that can be embedded inline with forms</p>
+				</div>
+				<div class="calendar-container">
+					<div class="inline-input-section">
+						<label for="date-input" class="inline-label">Select Date:</label>
+						<input
+							type="text"
+							id="date-input"
+							class="inline-date-input"
+							placeholder="Click to select date..."
+							readonly
+						/>
+						<div class="quick-buttons">
+							<button class="quick-btn" data-action="today">Today</button>
+							<button class="quick-btn" data-action="tomorrow">Tomorrow</button>
+							<button class="quick-btn" data-action="week">+1 Week</button>
+						</div>
+					</div>
+					<div id="inline-calendar" class="calendar inline-calendar" style="display: none">
+						<div class="calendar-header">
+							<button class="nav-btn" id="inline-prev">&larr;</button>
+							<div class="month-year">
+								<span id="inline-month">January</span>
+								<span id="inline-year">2024</span>
+							</div>
+							<button class="nav-btn" id="inline-next">&rarr;</button>
+						</div>
+						<div class="calendar-weekdays">
+							<div class="weekday">Sun</div>
+							<div class="weekday">Mon</div>
+							<div class="weekday">Tue</div>
+							<div class="weekday">Wed</div>
+							<div class="weekday">Thu</div>
+							<div class="weekday">Fri</div>
+							<div class="weekday">Sat</div>
+						</div>
+						<div class="calendar-days" id="inline-days"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- DatePicker Section -->
+			<section class="component-section" id="datepicker">
+				<div class="section-header">
+					<h2>DatePicker</h2>
+					<p>Material UI style DatePicker with helper text</p>
+				</div>
+				<div class="calendar-container">
+					<div class="datepicker-wrapper">
+						<div class="datepicker-field">
+							<div class="datepicker-input-container">
+								<input
+									type="text"
+									id="datepicker-input"
+									class="datepicker-input"
+									placeholder="Select a date..."
+									readonly
+								/>
+								<button class="datepicker-toggle" id="toggle-datepicker" type="button">▼</button>
+							</div>
+						</div>
+						<div class="calendar datepicker-calendar" id="datepicker-calendar">
+							<div class="calendar-header">
+								<button class="nav-btn" id="datepicker-prev">&larr;</button>
+								<div class="month-year">
+									<span id="datepicker-month">January</span>
+									<span id="datepicker-year">2024</span>
+								</div>
+								<button class="nav-btn" id="datepicker-next">&rarr;</button>
+							</div>
+							<div class="calendar-weekdays">
+								<div class="weekday">Sun</div>
+								<div class="weekday">Mon</div>
+								<div class="weekday">Tue</div>
+								<div class="weekday">Wed</div>
+								<div class="weekday">Thu</div>
+								<div class="weekday">Fri</div>
+								<div class="weekday">Sat</div>
+							</div>
+							<div class="calendar-days" id="datepicker-days"></div>
+						</div>
+					</div>
+					<div class="datepicker-actions">
+						<button class="today-btn" data-calendar="datepicker">Set Today</button>
+						<button class="clear-btn" onclick="clearDatePicker()">Clear</button>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Load all calendar components -->
+		<script src="components/BaseCalendar.js"></script>
+		<script src="components/ModernCalendar.js"></script>
+		<script src="components/MinimalCalendar.js"></script>
+		<script src="components/DarkCalendar.js"></script>
+		<script src="components/CompactCalendar.js"></script>
+		<script src="components/MultiSelectCalendar.js"></script>
+		<script src="components/DateRangeCalendar.js"></script>
+		<script src="components/DropdownCalendar.js"></script>
+		<script src="components/InlineCalendar.js"></script>
+		<script src="components/DatePickerCalendar.js"></script>
+		<script src="components/EventCalendar.js"></script>
+
+		<!-- Main application script -->
+		<script src="script-modular.js"></script>
+	</body>
+</html>

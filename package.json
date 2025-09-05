@@ -1,0 +1,31 @@
+{
+  "name": "calendar-components",
+  "version": "1.0.0",
+  "description": "A collection of beautiful and functional calendar components built with HTML, CSS, and JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build process needed for static files'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "calendar",
+    "components",
+    "html",
+    "css",
+    "javascript",
+    "ui",
+    "datepicker",
+    "frontend"
+  ],
+  "author": "Gamze Şirin",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "homepage": "https://calendar-components.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/calendar-components.git"
+  }
+}
